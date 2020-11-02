@@ -183,6 +183,13 @@ button:disabled,
   padding: 20px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.maincontainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
@@ -197,13 +204,16 @@ button:disabled,
 }
 
 .message-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
+  padding: 30px;
 }
 
 .message-container p {
   background-color: var(--green-color);
-  padding: 20px;
+  padding: 10px;
   margin: 10px 0;
   color: white;
   border-radius: 5px;

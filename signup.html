@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Coronavirus resume</title>
     <link rel="stylesheet" href="./css/cssreset.css" />
-    <!-- <link rel="stylesheet" href="./css/burger-icon.css" /> -->
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -28,33 +27,34 @@
       </ul>
     </nav>
     <main>
+      <div class="maincontainer">
+          <span id="title"><h2>Sign Up</h2></span>
+        <div class="form-wrapper">      
 
-      <div class="form-wrapper">      
-        <span id="title"><h2>Sign Up</h2></span>
-        <div id="form-container">
-          <form class="signup-form" action="">
-            <div class="lines"><input type="text" id="name" placeholder="Name *" /></div>
-            <div class="lines"><input type="text" id="secondname" placeholder="Second name *" /> </div>
-            <div class="lines"><input type="text" id="country" placeholder="Country" /></div>
-            <div class="lines"><input type="text" id="email" placeholder="Email *" /></div>
-            <div class="lines"><input type="password" id="password" placeholder="Enter Password *" /></div>
-            <div class="lines"><input
-              type="password"
-              id="repeat-password"
-              placeholder="Repeat Password"
-            /></div>
+          <div id="form-container">
+            <form class="signup-form" action="">
+              <div class="lines"><input type="text" autocomplete="name" id="name" placeholder="Name *" /></div>
+              <div class="lines"><input type="text" autocomplete="family-name" id="secondname" placeholder="Second name *" /> </div>
+              <div class="lines"><input type="text" autocomplete="country-name" id="country" placeholder="Country" /></div>
+              <div class="lines"><input type="text" autocomplete="email" id="email" placeholder="Email *" /></div>
+              <div class="lines"><input type="password" autocomplete="current-password" id="password" placeholder="Enter Password *" /></div>
+              <div class="lines"><input
+                type="password" autocomplete="new-password"
+                id="repeat-password"
+                placeholder="Repeat Password"
+              /></div>
 
-            <!-- The `disabled` deactivates the button. Button will be activated or desactivated by the `checkButton` method in the Singup.js  -->
-            <div class="buttondiv">
-              <button type="submit" class="button" id="signup-button">
-              Sign Up
-            </button>
+              <!-- The `disabled` deactivates the button. Button will be activated or desactivated by the `checkButton` method in the Singup.js  -->
+              <div class="buttondiv">
+                <button type="submit" class="button" id="signup-button">
+                Sign Up
+              </button>
+            </div>
+            </form>
           </div>
-          </form>
+          <div class="message-container">
+          </div>
         </div>
-        <div class="message-container">
-        </div>
-
       </main>
       <script src="./scripts/Signup.js"></script>
       <script src="./scripts/User.js"></script>
