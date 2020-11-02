@@ -30,28 +30,51 @@ The **MVP** will include:
 ​
 ## Data structure
 - **root/**
+
   --index.htm
+  
   --faq.html
+  
   --nav.html
+  
   --signup.html
+  
   --login.html
+  
   --dashboard.html
+  
   --README.md
+  
   - **css/**
+  
     --cssreset.css
+    
     --main.css
+    
   - **src/**
+  
     --database.js
+    
     --user.js
+    
     --validator.js
+    
     --index.js
+    
     --signup.js
+    
     --login.js
+    
     --dashboard.js
+    
 - **img/**
+
     --coronavirus-logo.jpeg
+    
     --coronavirus-logo.jpg
+    
     --coronavirus.jpg
+    
   ​
 ## API
 - Check out the interesting [COVID19API](https://api.covid19api.com/) API I used. :notes:
