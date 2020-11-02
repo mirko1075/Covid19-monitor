@@ -16,25 +16,31 @@ class Validator {
     };
   }
   getErrors = () => {
-    console.log(this.errors);
+    //console.log(this.errors);
     return this.errors;
   };
 
   //MANDATORY FIELDS
   validateName = (name) => {
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
+
     if (name === "") {
-      // delete this.errors.lastError;
       this.errors.lastError = this.invalidName;
       this.errors.invalidName = this.invalidName;
+      return false;
     }
+    return true;
   };
 
   validateSecondName = (secondName) => {
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
+
     if (secondName === "") {
-      // delete this.errors.lastError;
       this.errors.lastError = this.invalidSecondName;
       this.errors.invalidSecondName = this.invalidSecondName;
+      return false;
     }
+    return true;
   };
 
   // EMAIL CHECKS
@@ -47,25 +53,28 @@ class Validator {
   };
 
   validateValidEmail = (email) => {
-    // delete this.errors.lastError;
-    console.log("email", email);
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
+    // console.log("email", email);
     if (email === "") {
       this.errors.lastError = this.blankEmailError;
       this.errors.blankEmailError = this.blankEmailError;
+      return false;
     } else if (!this.checkEmailSyntax(email)) {
       this.errors.lastError = this.invalidEmailError;
       this.errors.invalidEmailError = this.invalidEmailError;
+      return false;
     }
+    return true;
   };
 
   validateUniqueEmail = (email) => {
-    // delete this.errors.lastError;
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     const users = db.getAllUsers(); //
 
     let emailUnique = true;
 
     users.forEach((userObj) => {
-      if (userObj.email === newEmail) {
+      if (userObj.email === email) {
         // Check email of each user
         emailUnique = false; // set emailUnique to `false` if email is already taken
       }
@@ -74,7 +83,9 @@ class Validator {
     if (!emailUnique) {
       this.errors.lastError = this.emailExistsError;
       this.errors.emailExistsError = this.emailExistsError;
+      return false;
     }
+    return true;
   };
 
   // PASSWORD CHECKS
@@ -83,26 +94,27 @@ class Validator {
     const passwordRegEx = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
     // Regex for password must contain at least eight characters, at least one number and both lower
     // and uppercase letters and special characters
-    // console.log(passwordRegEx.test(password));
     return passwordRegEx.test(password);
   };
 
   validatePassword = (password) => {
-    // delete this.errors.lastError;
-    // console.log(this.checkPasswordRegEx(password));
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     if (!this.checkPasswordRegEx(password)) {
       this.errors.lastError = this.passwordError;
       this.errors.passwordError = this.passwordError;
+      return false;
     }
+    return true;
   };
 
   validateRepeatPassword = (password, repeatPassword) => {
-    // delete this.errors.lastError;
-    console.log(password, repeatPassword);
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     if (password != repeatPassword) {
       this.errors.lastError = this.repeatPasswordError;
       this.errors.repeatPasswordError = this.repeatPasswordError;
+      return false;
     }
+    return true;
   };
 }
 

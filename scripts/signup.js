@@ -33,11 +33,8 @@ class Signup {
   };
 
   handlePasswordInput = (event) => {
-    const passwordInput = event.target;
-    const password = passwordInput.value;
-    const repeatPasswordInput = this.repeatPasswordInput;
-
-    const repeatPassword = repeatPasswordInput.value;
+    const password = this.passwordInput.value;
+    const repeatPassword = this.repeatPasswordInput.value;
     validator.validatePassword(password);
     // validator.validateRepeatPassword(password, repeatPassword);
     this.cleanErrorMessage();
@@ -54,17 +51,36 @@ class Signup {
     this.setErrorMessage();
   };
 
-    checkAllForm = (){
-      validator.validateName(this.nameInput.value);
-      validator.validateSecondName(this.secondNameInput.value);
-      validator.validateValidEmail(this.emailInput.value);
-      validator.validateUniqueEmail(this.emailInput.value);
-      validator.validatePassword(password);
-      validator.validateRepeatPassword(password, repeatPassword);
-      this.cleanErrorMessage();
+  checkAllForm = () => {
+    this.cleanErrorMessage();
+    const password = this.passwordInput.value;
+    const repeatPassword = this.repeatPasswordInput.value;
+    const nameResult = validator.validateName(this.nameInput.value);
+    const secondNameResult = validator.validateSecondName(
+      this.secondNameInput.value
+    );
+    const emailResult = validator.validateValidEmail(this.emailInput.value);
+    const uniqueEmailResult = validator.validateUniqueEmail(
+      this.emailInput.value
+    );
+    const passwordResult = validator.validatePassword(password);
+    const repeatPasswordResult = validator.validateRepeatPassword(
+      password,
+      repeatPassword
+    );
+    if (
+      nameResult &&
+      secondNameResult &&
+      emailResult & uniqueEmailResult &&
+      passwordResult &&
+      repeatPasswordResult
+    ) {
+      return true;
+    } else {
       this.setErrorMessageAll();
+      return false;
     }
-
+  };
 
   cleanErrorMessage = () => {
     this.errorsContainer.innerHTML = "";
@@ -83,8 +99,6 @@ class Signup {
 
   // Refactor display only one message for each field and when submit all messages
   setErrorMessageAll = () => {
-    this.errorsContainer.innerHTML = "";
-
     const errorsObj = validator.getErrors();
 
     const errorStringsArr = Object.values(errorsObj);
@@ -92,7 +106,6 @@ class Signup {
     errorStringsArr.forEach((str) => {
       const p = document.createElement("p");
       p.textContent = str;
-
       this.errorsContainer.appendChild(p);
     });
   };
@@ -104,25 +117,29 @@ class Signup {
     event.preventDefault();
 
     // get the value from all of the inputs
-    const name = this.nameInput.value;
+    const name = this.countryInput.value;
     const secondName = this.secondNameInput.value;
     const country = this.countryInput.value;
     const email = this.emailInput.value;
     const password = this.passwordInput.value;
-    checkAllForm();
-    // create the new user
-    const newUser = new User(name, secondName, country, email, password);
+    if (this.checkAllForm()) {
+      // create the new user
+      const newUser = new User(name, secondName, country, email, password);
 
-    // Save the user in the database
-    db.saveNewUser(newUser);
+      // Save the user in the database
+      db.saveNewUser(newUser);
 
-    // empty the form
-    this.nameInput.value = "";
-    this.secondName = "";
-    this.country.value = "";
-    this.emailInput.value = "";
-    this.passwordInput.value = "";
-    this.repeatPasswordInput = "";
+      // empty the form
+      this.nameInput.value = "";
+      this.secondNameInput = "";
+      this.countryInput.value = "";
+      this.emailInput.value = "";
+      this.passwordInput.value = "";
+      this.repeatPasswordInput = "";
+    } else {
+      this.cleanErrorMessage();
+      this.setErrorMessage();
+    }
   };
 
   addListners = () => {
