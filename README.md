@@ -11,7 +11,7 @@ App that display top 10 countries per Infeccions, deaths and recovered.
 ​
 The **MVP** will include:
 ​
-- **Homepage:** it will include all the links to navigate around the app and the music genre buttons and display the daily data of the world scope (Contagioous, deaths, recovered)
+- **Homepage:** it will include all the links to navigate around the app and the music genre buttons and display the updated daily data of the world scope (Contagioous, deaths, recovered)
 - **Dashboard:** Wioll display the top 10 countries displayed in sections for contagoious, deaths, recovered. Dropdown menu to select Country and see the detail for each one selected
 - **Sign Up:** A registration form for new users with email and password validation.
 - **Log In:** A form for signed up users with email and password validation.
@@ -30,26 +30,31 @@ The **MVP** will include:
 ​
 ## Data structure
 - **root/**
-  - index.html
-  - stats.html
-  - faq.html
-  - login.html
-  - signup.html
+  --index.htm
+  --faq.html
+  --nav.html
+  --signup.html
+  --login.html
+  --dashboard.html
+  --README.md
   - **css/**
-    - style.css
+    --cssreset.css
+    --main.css
   - **src/**
-    - Main.js
-    - Login.js
-    - Database.js
-    - Signup.js
-    - User.js
-    - Validator.js
-    - collector.js
+    --database.js
+    --user.js
+    --validator.js
+    --index.js
+    --signup.js
+    --login.js
+    --dashboard.js
 - **img/**
-covid-page.jpeg
+    --coronavirus-logo.jpeg
+    --coronavirus-logo.jpg
+    --coronavirus.jpg
   ​
 ## API
-- Check out the amazing [Deezer](https://api.covid19api.com/) API I used. :notes:
+- Check out the interesting [COVID19API](https://api.covid19api.com/) API I used. :notes:
 ​
 ## Links
 #### Trello
