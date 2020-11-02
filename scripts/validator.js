@@ -10,37 +10,37 @@ class Validator {
 
     // object with all the current errors that are shown to the user
     this.errors = {
-      invalidName: this.invalidName,
-      invalidSecondName: this.invalidSecondName,
-      invalidEmailError: this.invalidEmailError,
-      passwordError: this.passwordError,
-      repeatPasswordError: this.repeatPasswordError,
+      lastError: "",
     };
   }
   getErrors = () => {
+    // console.log(this.errors);
     return this.errors;
   };
+
   validateName = (name) => {
     if (name === "") {
+      delete this.errors.lastError;
+      this.errors.lastError = this.invalidName;
       this.errors.invalidName = this.invalidName;
     }
   };
+
   validateSecondName = (secondName) => {
     if (secondName === "") {
+      delete this.errors.lastError;
+      this.errors.lastError = this.invalidSecondName;
       this.errors.invalidSecondName = this.invalidSecondName;
     }
   };
-  validateMail 0 () => {
+  validateMail = () => {};
 
-  }
+  validatePassword = (password) => {};
 
-  validatePassword = (password) => {
+  validateRepeatPassword = (password) => {};
 
-  }
+  validateValidEmail = (email) => {};
 
-  validateRepeatPassword = (password) => {
-    
-  }
+  validateUniqueEmail = (email) => {};
 }
 const validator = new Validator();
-

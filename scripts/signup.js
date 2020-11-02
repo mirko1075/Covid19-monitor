@@ -9,15 +9,17 @@ class Signup {
     this.password = document.getElementById("password");
     this.repeatpassword = document.getElementById("repeat-password");
     this.buttonInput = document.getElementById("signup-button");
-    this.errorsWrapper = document.querySelector(".message-container");
+    this.errorsContainer = document.querySelector(".message-container");
   }
-  handleName = (event) => {
-    validator.validateName(name);
+  handleNameInput = (event) => {
+    validator.validateName(this.name.value);
+    this.cleanErrorMessage();
     this.setErrorMessage();
   };
 
-  handleSecondName = (event) => {
-    validator.validateSecondName(this.secondName);
+  handleSecondNameInput = (event) => {
+    validator.validateSecondName(this.secondName.value);
+    this.cleanErrorMessage();
     this.setErrorMessage();
   };
 
@@ -25,10 +27,10 @@ class Signup {
     const emailInput = event.target;
     const email = emailInput.value;
 
-    validator.validateValidEmail(email);
-    validator.validateUniqueEmail(email);
-
-    this.setErrorMessages();
+    validator.validateValidEmail(this.email.value);
+    validator.validateUniqueEmail(this.email.value);
+    this.cleanErrorMessage();
+    this.setErrorMessage();
   };
 
   handlePasswordInput = (event) => {
@@ -40,8 +42,8 @@ class Signup {
 
     validator.validatePassword(password);
     validator.validateRepeatPassword(password, repeatPassword);
-
-    this.setErrorMessages();
+    this.cleanErrorMessage();
+    this.setErrorMessage();
   };
 
   handleRepeatPasswordInput = (event) => {
@@ -53,12 +55,25 @@ class Signup {
 
     validator.validatePassword(password);
     validator.validateRepeatPassword(password, repeatPassword);
-
+    this.cleanErrorMessage();
     this.setErrorMessages();
   };
 
+  cleanErrorMessage = () => {
+    this.errorsContainer.innerHTML = "";
+  };
+
   setErrorMessage = () => {
-    this.errorsWrapper.innerHTML = "";
+    //console.log(this.errorsContainer.innerHTML);
+    const errorsObj = validator.getErrors();
+    const p = document.createElement("p");
+    p.innerHTML = errorsObj.lastError;
+
+    this.errorsContainer.appendChild(p);
+  };
+
+  setErrorMessageResume = () => {
+    this.errorsContainer.innerHTML = "";
 
     const errorsObj = validator.getErrors();
 
@@ -68,13 +83,13 @@ class Signup {
       const p = document.createElement("p");
       p.textContent = str;
 
-      this.errorsWrapper.appendChild(p);
+      this.errorsContainer.appendChild(p);
     });
   };
 
   // Refactor display only one message for each field and when submit all messages
   setErrorMessageAll = () => {
-    this.errorsWrapper.innerHTML = "";
+    this.errorsContainer.innerHTML = "";
 
     const errorsObj = validator.getErrors();
 
@@ -84,7 +99,7 @@ class Signup {
       const p = document.createElement("p");
       p.textContent = str;
 
-      this.errorsWrapper.appendChild(p);
+      this.errorsContainer.appendChild(p);
     });
   };
 
@@ -93,11 +108,20 @@ class Signup {
   };
 
   addListners = () => {
-    this.name.addEventListener("blur", this.handleName);
-    this.secondName.addEventListener("blur", this.handleSecondName);
-    this.email.addEventListener("input", this.handleEmail);
-    this.password.addEventListener("input", this.handlePassword);
-    this.repeatpassword.addEventListener("input", this.handleRepeatPassword);
+    this.name.addEventListener("blur", this.handleNameInput);
+    this.secondName.addEventListener("blur", this.handleSecondNameInput);
+    this.email.addEventListener("input", this.handleEmailInput);
+    this.email.addEventListener("blur", this.handleEmailInput);
+    this.password.addEventListener("input", this.handlePasswordInput);
+    this.password.addEventListener("blur", this.handlePasswordInput);
+    this.repeatpassword.addEventListener(
+      "input",
+      this.handleRepeatPasswordInput
+    );
+    this.repeatpassword.addEventListener(
+      "blur",
+      this.handleRepeatPasswordInput
+    );
     this.buttonInput.addEventListener("click", this.saveData);
   };
 }
