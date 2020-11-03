@@ -45,7 +45,7 @@ fetch("https://api.covid19api.com/summary", {
       console.log(spainDetailObj[i]);
       if (spainDetailObj[i].Country == "Spain") {
         spainDetailText += `
-        <h3>Spain updated cases - Updated</h3>
+        <h3>Spain cases - Updated/h3>
         <h6>Fetch date :  ${fetchDate} - ${fetchHour}</h6>
         <hr>
         <p class="result">NewConfirmed: ${spainDetailObj[i].NewConfirmed} </p>

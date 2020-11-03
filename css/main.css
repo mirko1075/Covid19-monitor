@@ -106,7 +106,6 @@ nav .navbar-brand {
 
 /* HOMEPAGE */
 #main-container {
-  background: url("../images/coronavirus.jpg") no-repeat center center / 70%;
   height: 100vh;
   position: relative;
   margin: 0 auto;
@@ -132,7 +131,7 @@ nav .navbar-brand {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
 }
 .topten {
@@ -294,5 +293,9 @@ button:disabled,
 }
 
 /* From 1024px and up */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  .main-container {
+    background: url("../images/coronavirus-crop.jpg") no-repeat center center /
+      70%;
+  }
 }
