@@ -108,3 +108,5 @@ The **MVP** will include:
 ​
 
 #### Slides
+
+[PPT Google docs](https://docs.google.com/presentation/d/e/2PACX-1vS3u5DF-LlWZVjdQ3kw2gRV1uSDLX6nLBX9BzK7CSJMFd1l1HnVjD5CetY_NcpriqfcuviPYje9V2Ef/pub?start=false&loop=false&delayms=3000)

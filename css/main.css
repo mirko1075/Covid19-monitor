@@ -62,14 +62,14 @@ h2 {
 }
 
 h3 {
-  color: var(--green-color);
+  color: var(--text-color);
   font-size: 26px;
 }
-
-h4 {
-  font-size: 22px;
+th,
+td {
+  padding: 5px;
+  text-align: left;
 }
-
 /* END GENERAL STYLES */
 
 /* NAV BAR */
@@ -112,14 +112,17 @@ nav .navbar-brand {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: center;
+  align-content: initial;
   width: 100vw;
+  padding: 20px;
 }
 
 .content-left,
 .content-right {
+  color: var(--text-color);
+  padding: 20px;
   border: 1px solid black;
-  color: var(--green-color);
+  max-height: 350px;
 }
 
 /*  DASHBOARD */
@@ -133,17 +136,19 @@ nav .navbar-brand {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
+  padding: 20px;
 }
 .topten {
   border: 1px solid black;
   color: var(--green-color);
   width: 100%;
   max-width: 400px;
+  padding: 20px;
 }
 
 .result {
   width: 50%;
-  color: var(--green-color);
+  color: var(--text-color);
   font-size: 1rem;
 }
 /* FORM */
@@ -254,10 +259,14 @@ button:disabled,
 
 /* Mobile first, we start from the smallest viewport width */
 
-/* From 768px and up */
+/* Up to 768px  */
 @media (max-width: 768px) {
   nav {
     display: block;
+  }
+
+  .dashboard-container {
+    justify-content: center;
   }
 
   .logo-container {
@@ -292,10 +301,10 @@ button:disabled,
   }
 }
 
-/* From 1024px and up */
+/* From 768px and up */
 @media (min-width: 768px) {
   .main-container {
     background: url("../images/coronavirus-crop.jpg") no-repeat center center /
-      70%;
+      50%;
   }
 }

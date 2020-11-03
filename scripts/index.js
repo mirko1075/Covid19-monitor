@@ -1,5 +1,5 @@
-const coronaList = document.querySelector(".comtent-left");
-const spainDetail = document.querySelector(".comtent-right");
+const coronaList = document.querySelector(".content-left");
+const spainDetail = document.querySelector(".content-right");
 
 fetch("https://api.covid19api.com/summary", {
   method: "GET",
@@ -10,56 +10,69 @@ fetch("https://api.covid19api.com/summary", {
 })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     globalObj = data.Global;
     let fetchDate = data.Date.slice(0, 10);
     let fetchHour = data.Date.slice(11, 19);
     coronaList.innerHTML = "";
     const articleCorona = document.createElement("article");
-    let articleCoronaText = ``;
+    let articleCoronaText = `<table>
+                              <thead>
+                                <tr>
+                                <th colspan="2" class="result"><h3>World cases - Updated</h3></th>
+                              </tr>
+                              </thead>`;
     articleCoronaText += `
-    <h3>World cases - Updated</h3>
-      <h6>Fetch date :  ${fetchDate} - ${fetchHour}</h6>
-      <hr>
-    `;
-
-    for (const property in globalObj) {
-      articleCoronaText += `
-
-      <p class="result">${property}: ${globalObj[property]}</p>
-    `;
-    }
+                              <tr>
+                                <td colspan="2" class="result"><h4>Fetch date :  ${fetchDate} - ${fetchHour}</h4><td>
+                              </tr>`;
     articleCoronaText += `
-      <hr>
-    `;
+                              <tr><td class="result">NewConfirmed</td><td class="result aligncell">${globalObj.NewConfirmed}</td></tr>
+                              <tr><td class="result">NewDeaths</td><td class="result aligncell">${globalObj.NewDeaths}</td></tr>
+                              <tr><td class="result">NewRecovered</td><td class="result aligncell">${globalObj.NewRecovered}</td></tr>
+                              <tr><td class="result">NewConfirmed</td><td class="result aligncell">${globalObj.NewConfirmed}</td></tr>
+                              <tr><td colspan ="2"><hr></td></tr>
+                              <tr><td class="result">TotalConfirmed</td><td class="result aligncell">${globalObj.TotalConfirmed}</td></tr>
+                              <tr><td class="result">TotalConfirmed</td><td class="result aligncell">${globalObj.TotalDeaths}</td></tr>
+                              <tr><td class="result">TotalConfirmed</td><td class="result aligncell">${globalObj.TotalRecovered}</td></tr>
+                            `;
+    articleCoronaText += `
+    </table>
+  `;
     articleCorona.innerHTML = articleCoronaText;
     coronaList.appendChild(articleCorona);
 
     const spainDetailObj = data.Countries;
-    console.dir(spainDetailObj);
+    // console.dir(spainDetailObj);
     spainDetail.innerHTML = "";
     const articleSpainDetail = document.createElement("article");
-    let spainDetailText = ``;
+    let spainDetailText = `<table>
+                              <thead>
+                                <tr>
+                                <th colspan="2" class="result"><h3>Spain cases - Updated</h3></th>
+                              </tr>
+                              </thead>`;
 
     for (i = 0; i < spainDetailObj.length; i++) {
-      console.log(spainDetailObj[i]);
       if (spainDetailObj[i].Country == "Spain") {
         spainDetailText += `
-        <h3>Spain cases - Updated/h3>
-        <h6>Fetch date :  ${fetchDate} - ${fetchHour}</h6>
-        <hr>
-        <p class="result">NewConfirmed: ${spainDetailObj[i].NewConfirmed} </p>
-        <p class="result">NewDeaths: ${spainDetailObj[i].NewDeaths}</p>
-        <p class="result">NewRecovered: ${spainDetailObj[i].NewRecovered}</p>
-        <p class="result">NewConfirmed: ${spainDetailObj[i].NewConfirmed}</p>
-        <p class="result">TotalConfirmed: ${spainDetailObj[i].TotalConfirmed}</p>
-        <p class="result">TotalConfirmed: ${spainDetailObj[i].TotalDeaths}</p>
-        <p class="result">TotalConfirmed: ${spainDetailObj[i].TotalRecovered}</p>
+        <tr>
+          <td colspan="2" class="result"><h4>Fetch date :  ${fetchDate} - ${fetchHour}</h4><td>
+        </tr>
+        
+        <tr><td class="result">NewConfirmed</td><td class="result aligncell">${spainDetailObj[i].NewConfirmed}</td></tr>
+        <tr><td class="result">NewDeaths</td><td class="result aligncell">${spainDetailObj[i].NewDeaths}</td></tr>
+        <tr><td class="result">NewRecovered</td><td class="result aligncell">${spainDetailObj[i].NewRecovered}</td></tr>
+        <tr><td class="result">NewConfirmed</td><td class="result aligncell">${spainDetailObj[i].NewConfirmed}</td></tr>
+        <tr><td colspan ="2"><hr></td></tr>
+        <tr><td class="result">TotalConfirmed</td><td class="result aligncell">${spainDetailObj[i].TotalConfirmed}</td></tr>
+        <tr><td class="result">TotalConfirmed</td><td class="result aligncell">${spainDetailObj[i].TotalDeaths}</td></tr>
+        <tr><td class="result">TotalConfirmed</td><td class="result aligncell">${spainDetailObj[i].TotalRecovered}</td></tr>
       `;
       }
     }
     spainDetailText += `
-      <hr>
+      </table>
     `;
     articleSpainDetail.innerHTML = spainDetailText;
     spainDetail.appendChild(articleSpainDetail);
