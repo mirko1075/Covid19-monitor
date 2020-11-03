@@ -58,10 +58,12 @@ class Validator {
     if (email === "") {
       this.errors.lastError = this.blankEmailError;
       this.errors.blankEmailError = this.blankEmailError;
+      console.log("Empty email");
       return false;
     } else if (!this.checkEmailSyntax(email)) {
       this.errors.lastError = this.invalidEmailError;
       this.errors.invalidEmailError = this.invalidEmailError;
+      console.log("Wrong email");
       return false;
     }
     return true;

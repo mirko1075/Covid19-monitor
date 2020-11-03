@@ -69,6 +69,10 @@ h4 {
   font-size: 22px;
 }
 
+.result {
+  color: var(--green-color);
+  font-size: 1rem;
+}
 /* END GENERAL STYLES */
 
 /* NAV BAR */
@@ -104,13 +108,13 @@ nav .navbar-brand {
 }
 
 #main-container {
-  background: url("../images/coronavirus.jpg") no-repeat center center / 90%;
+  background: url("../images/coronavirus.jpg") no-repeat center center / 70%;
   height: 100vh;
   position: relative;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
   width: 100vw;
 }

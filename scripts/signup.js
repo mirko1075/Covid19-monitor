@@ -24,8 +24,6 @@ class Signup {
   };
 
   handleEmailInput = (event) => {
-    const emailInput = event.target;
-    const email = this.emailInput.value;
     validator.validateValidEmail(this.emailInput.value);
     validator.validateUniqueEmail(this.emailInput.value);
     this.cleanErrorMessage();
@@ -33,28 +31,26 @@ class Signup {
   };
 
   handlePasswordInput = (event) => {
-    const password = this.passwordInput.value;
-    const repeatPassword = this.repeatPasswordInput.value;
-    validator.validatePassword(password);
-    // validator.validateRepeatPassword(password, repeatPassword);
+    validator.validatePassword(this.passwordInput.value);
+    // validator.validateRepeatPassword(this.passwordInput.value, this.repeatPasswordInput.value);
     this.cleanErrorMessage();
     this.setErrorMessage();
   };
 
   handleRepeatPasswordInput = (event) => {
-    const password = this.passwordInput.value;
-    const repeatPassword = this.repeatPasswordInput.value;
     // console.log(password, repeatPassword);
-    // validator.validatePassword(password);
-    validator.validateRepeatPassword(password, repeatPassword);
+    // validator.validatePassword(this.passwordInput.value);
+    validator.validateRepeatPassword(
+      this.passwordInput.value,
+      this.repeatPasswordInput.value
+    );
     this.cleanErrorMessage();
     this.setErrorMessage();
   };
 
   checkAllForm = () => {
     this.cleanErrorMessage();
-    const password = this.passwordInput.value;
-    const repeatPassword = this.repeatPasswordInput.value;
+    delete validator.errors.lastError;
     const nameResult = validator.validateName(this.nameInput.value);
     const secondNameResult = validator.validateSecondName(
       this.secondNameInput.value
@@ -65,9 +61,10 @@ class Signup {
     );
     const passwordResult = validator.validatePassword(password);
     const repeatPasswordResult = validator.validateRepeatPassword(
-      password,
-      repeatPassword
+      this.passwordInput.value,
+      this.repeatPasswordInput.value
     );
+    delete validator.errors.lastError;
     if (
       nameResult &&
       secondNameResult &&
@@ -88,7 +85,7 @@ class Signup {
 
   setErrorMessage = () => {
     const errorsObj = validator.getErrors();
-    // console.log(errorsObj.lastError);
+    console.log(errorsObj);
 
     if (errorsObj.lastError) {
       const p = document.createElement("p");
@@ -102,12 +99,13 @@ class Signup {
     const errorsObj = validator.getErrors();
 
     const errorStringsArr = Object.values(errorsObj);
-
-    errorStringsArr.forEach((str) => {
-      const p = document.createElement("p");
-      p.textContent = str;
-      this.errorsContainer.appendChild(p);
-    });
+    let contentToAppend = "";
+    for (let i = 0; i < errorStringsArr.length; i++) {
+      contentToAppend += "<p>" + errorStringsArr[i] + "</p>";
+    }
+    console.log(this.errorsContainer);
+    this.errorsContainer.innerHTML = contentToAppend;
+    // console.log(this.errorsContainer.innerHTML);
   };
 
   saveData = (event) => {
@@ -117,11 +115,13 @@ class Signup {
     event.preventDefault();
 
     // get the value from all of the inputs
-    const name = this.countryInput.value;
+    const name = this.nameInput.value;
     const secondName = this.secondNameInput.value;
     const country = this.countryInput.value;
     const email = this.emailInput.value;
     const password = this.passwordInput.value;
+
+    console.log("Check:", this.checkAllForm());
     if (this.checkAllForm()) {
       // create the new user
       const newUser = new User(name, secondName, country, email, password);
@@ -131,17 +131,30 @@ class Signup {
 
       // empty the form
       this.nameInput.value = "";
-      this.secondNameInput = "";
+      this.secondNameInput.value = "";
       this.countryInput.value = "";
       this.emailInput.value = "";
       this.passwordInput.value = "";
-      this.repeatPasswordInput = "";
+      this.repeatPasswordInput.value = "";
+
+      const p = document.createElement("p");
+
+      p.textContent = `Yo signed up correctly`;
+      p.classList.add("correct-message");
+      this.errorsContainer.appendChild(p);
+      this.redirect();
     } else {
       this.cleanErrorMessage();
-      this.setErrorMessage();
+      this.setErrorMessageAll();
     }
   };
+  redirect = () => {
+    setTimeout(function () {
+      location.assign("login.html");
+    }, 2000);
 
+    // setTimeout( () => location.assign("dashboard.html"), 2000)
+  };
   addListners = () => {
     this.nameInput.addEventListener("blur", this.handleNameInput);
     this.secondNameInput.addEventListener("blur", this.handleSecondNameInput);
