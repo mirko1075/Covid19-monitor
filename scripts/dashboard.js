@@ -27,11 +27,18 @@ fetch("https://api.covid19api.com/summary", {
     topInfeccionsDiv.innerHTML = "";
     const articletopinfeccions = document.createElement("article");
 
-    topinfeccionsText += `<table border="1px">`;
-    topinfeccionsText += `<tr><th colspan="2"><h3>Top 10 New confirmed cases</h3><br>`;
-    topinfeccionsText += `
-          <h6>Last update :  ${fetchDate} - ${fetchHour}</h6>
-          </th></tr>
+    topinfeccionsText += `<table>`;
+    topinfeccionsText += `  <thead>
+                                <tr>
+                                    <th colspan="2"><h3>Top 10 New confirmed cases</h3></th>
+                                </tr>
+
+                                `;
+    topinfeccionsText += `      <tr>
+                                    <td colspan="2"><h6>Last update :  ${fetchDate} - ${fetchHour}</h6></td>
+                                </tr>
+                            </thead>
+                            <tbody>
       `;
 
     for (let i = 0; i < 10; i++) {
@@ -40,7 +47,7 @@ fetch("https://api.covid19api.com/summary", {
         <tr><td class="result">${confirmedArr[i].Country} :</td><td class="result"> ${confirmedArr[i].NewConfirmed} </td></tr>
       `;
     }
-    topinfeccionsText += `</table>`;
+    topinfeccionsText += `</tbody></table>`;
 
     articletopinfeccions.innerHTML = topinfeccionsText;
     topInfeccionsDiv.appendChild(articletopinfeccions);
