@@ -85,7 +85,7 @@ class Signup {
 
   setErrorMessage = () => {
     const errorsObj = validator.getErrors();
-    console.log(errorsObj);
+    // console.log(errorsObj);
 
     if (errorsObj.lastError) {
       const p = document.createElement("p");
@@ -103,7 +103,7 @@ class Signup {
     for (let i = 0; i < errorStringsArr.length; i++) {
       contentToAppend += "<p>" + errorStringsArr[i] + "</p>";
     }
-    console.log(this.errorsContainer);
+    // console.log(this.errorsContainer);
     this.errorsContainer.innerHTML = contentToAppend;
     // console.log(this.errorsContainer.innerHTML);
   };
@@ -121,7 +121,7 @@ class Signup {
     const email = this.emailInput.value;
     const password = this.passwordInput.value;
 
-    console.log("Check:", this.checkAllForm());
+    // console.log("Check:", this.checkAllForm());
     if (this.checkAllForm()) {
       // create the new user
       const newUser = new User(name, secondName, country, email, password);

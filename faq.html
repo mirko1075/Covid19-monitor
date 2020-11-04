@@ -1,128 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Covid19-monitor</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/cssreset.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="logo-container">
-        <a href="index.html"
-          ><img
-            src="images/coronavirus-logo.jpg"
-            alt="Logo"
-            class="navbar-brand"
-        /></a>
-      </div>
-      <ul class="nav-menu hide-menu" id="nav-menu">
-        <!-- NAVIGATION BAR -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </nav>
-    <main>
-      <div
-        id="carouselExampleCaptions"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <ol class="carousel-indicators">
-          <li
-            data-target="#carouselExampleCaptions"
-            data-slide-to="0"
-            class="active"
-          ></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            Text Text Text Text Text Text Text Text Text Text Text Text Text
-            Text Text Text Text Text Text Text Text Text Text Text Text Text
-            Text Text Text Text Text Text Text Text Text Text Text Text Text
-            Text Text Text Text Text Text Text Text Text Text Text Text Text
-            Text Text Text Text Text Text
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./images/coronavirus-logo.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./images/coronavirus-logo.jpeg"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </div>
-          </div>
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleCaptions"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleCaptions"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </main>
-    <footer>
-      <div class="footer-wrap">
-        © 2020 Copyright:
-        <a href="https://mirkosiddi.com/"> mirkosiddi.com</a>
-      </div>
-    </footer>
-  </body>
 
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"
-  ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Covid19-monitor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/cssreset.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo-container">
+      <a href="index.html"><img src="images/coronavirus-logo.jpg" alt="Logo" class="navbar-brand" /></a>
+    </div>
+
+    <ul class="nav-menu hide-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="faqcontainer">
+      <div class="row ">
+        <div class="col-md-12">
+          <div class="row-fluid">
+            <div class="vc_empty_space col-12 pt-4"><span class="vc_empty_space_inner"></span></div>
+          </div>
+          <a id="Spread" title="Spread" class="onThisPageAnchor"></a>
+          <h2>FAQs about Coronavirus spread</h2>
+          <div id="accordion-5fa2cc30c7c1b" class="accordion indicator-plus accordion-white mb-3" role="tablist">
+            <div class="card bar">
+              <div class="card card-accordion ">
+                <div class="card-header collapsed" id="accordion-5fa2cc30c7c1b-card-0"
+                  data-target="#accordion-5fa2cc30c7c1b-collapse-0" data-toggle="collapse" role="tab"
+                  aria-expanded="false"><button class="card-title btn btn-link"
+                    data-controls="accordion-5fa2cc30c7c1b-collapse-0"><span role="heading" aria-level="0">How does the
+                      virus spread?</span></button></div>
+                <div aria-labelledby="accordion-5fa2cc30c7c1b-card-0" class="collapse d-print-block " collapsed
+                  id="accordion-5fa2cc30c7c1b-collapse-0" role="tabpanel">
+                  <div class="card-body">
+                    <p></p>
+                    <ul>
+                      <li>The virus that causes COVID-19 most commonly spreads between people who are in close contact
+                        with one another (within about 6 feet, or 2 arm lengths).</li>
+                      <li>It spreads through respiratory&nbsp;<strong>droplets or small particles, such as those in
+                          aerosols, produced when an infected person coughs, sneezes, sings, talks, or
+                          breathes</strong>.
+                        <ul>
+                          <li>These&nbsp;<strong>particles can be inhaled </strong>into the nose, mouth, airways, and
+                            lungs and cause infection.&nbsp;<strong>This is thought to be the main way the virus
+                              spreads.</strong></li>
+                          <li>Droplets can also land on surfaces and objects and be transferred by touch. A person may
+                            get COVID-19 by&nbsp;<strong>touching the surface or object that has the virus on it
+                            </strong>and then touching their own mouth, nose, or eyes. Spread from touching surfaces is
+                            not thought to be the main way the virus spreads.</li>
+                        </ul>
+                      </li>
+                      <li>It is possible that <strong>COVID-19 may spread through the droplets and airborne particles
+                          that are formed when a person who has COVID-19 coughs, sneezes, sings, talks, or
+                          breathes.&nbsp;</strong>There is growing evidence that droplets and airborne particles can
+                        remain suspended in the air and be breathed in by others, and travel distances beyond 6 feet
+                        (for example, during choir practice, in restaurants, or in fitness classes). In general, indoor
+                        environments without good ventilation increase this risk.</li>
+                    </ul>
+                    <p>COVID-19 seems to be spreading easily and sustainably in the community (&ldquo;community
+                      spread&rdquo;) in&nbsp;many affected geographic areas. Community spread means people have been
+                      infected with the virus in an area, including some who are not sure how or where they became
+                      infected.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card bar">
+              <div class="card card-accordion ">
+                <div class="card-header collapsed" id="accordion-5fa2cc30c7c1b-card-1"
+                  data-target="#accordion-5fa2cc30c7c1b-collapse-1" data-toggle="collapse" role="tab"
+                  aria-expanded="false"><button class="card-title btn btn-link"
+                    data-controls="accordion-5fa2cc30c7c1b-collapse-1"><span role="heading" aria-level="1">Will warm
+                      weather stop the outbreak of COVID-19?</span></button></div>
+                <div aria-labelledby="accordion-5fa2cc30c7c1b-card-1" class="collapse d-print-block " collapsed
+                  id="accordion-5fa2cc30c7c1b-collapse-1" role="tabpanel">
+                  <div class="card-body">
+                    <p>It is not yet known whether weather and temperature affect the spread of COVID-19. Some other
+                      viruses, like those that cause the common cold and flu, spread more during cold weather months but
+                      that does not mean it is impossible to become sick with these viruses during other months.&nbsp;
+                      There is much more to learn about the transmissibility, severity, and other features associated
+                      with COVID-19 and investigations are ongoing.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card bar">
+              <div class="card card-accordion ">
+                <div class="card-header collapsed" id="accordion-5fa2cc30c7c1b-card-2"
+                  data-target="#accordion-5fa2cc30c7c1b-collapse-2" data-toggle="collapse" role="tab"
+                  aria-expanded="false"><button class="card-title btn btn-link"
+                    data-controls="accordion-5fa2cc30c7c1b-collapse-2"><span role="heading" aria-level="2">What is
+                      community spread?</span></button></div>
+                <div aria-labelledby="accordion-5fa2cc30c7c1b-card-2" class="collapse d-print-block " collapsed
+                  id="accordion-5fa2cc30c7c1b-collapse-2" role="tabpanel">
+                  <div class="card-body">
+                    <p>Community spread means people have been infected with the virus in an area, including some who
+                      are not sure how or where they became infected. Each health department determines community spread
+                      differently based on local conditions. For information on community spread in your area, please
+                      visit your health department&rsquo;s website.&#8203;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card bar">
+              <div class="card card-accordion ">
+                <div class="card-header collapsed" id="accordion-5fa2cc30c7c1b-card-3"
+                  data-target="#accordion-5fa2cc30c7c1b-collapse-3" data-toggle="collapse" role="tab"
+                  aria-expanded="false"><button class="card-title btn btn-link"
+                    data-controls="accordion-5fa2cc30c7c1b-collapse-3"><span role="heading" aria-level="3">Can
+                      mosquitoes or ticks spread the virus that causes COVID-19?</span></button></div>
+                <div aria-labelledby="accordion-5fa2cc30c7c1b-card-3" class="collapse d-print-block " collapsed
+                  id="accordion-5fa2cc30c7c1b-collapse-3" role="tabpanel">
+                  <div class="card-body">
+                    <p>At this time, CDC has no data to suggest that this new coronavirus or other similar coronaviruses
+                      are spread by mosquitoes or ticks. The main way that COVID-19 spreads is from person to person.
+                      See&nbsp;<a
+                        href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/how-covid-spreads.html"></a>How
+                      Coronavirus Spreads</a>&nbsp;for more information.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </main>
+  <footer>
+    <div class="footer-wrap">
+      © 2020 Copyright:
+      <a href="https://mirkosiddi.com/" target="_blank" class="footerlink">
+        mirkosiddi.com</a>
+      - API provided by
+      <a href="https://rapidapi.com/user/bolorundurov" target="_blank" class="footerlink">bolorundurov</a>
+    </div>
+  </footer>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 </html>
