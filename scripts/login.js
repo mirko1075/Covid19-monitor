@@ -21,9 +21,13 @@ class Signin {
     const users = db.getAllUsers();
 
     // Check the password and email exist in localstorage
+    let name = "";
+    let secondName = "";
 
     const user = users.find(function (userObj) {
       if (userObj.email === email && userObj.password === password) {
+        name = userObj.name;
+        secondName = userObj.secondName;
         return true;
       }
     });
@@ -36,6 +40,9 @@ class Signin {
     if (!user) {
       p.textContent = "Email or password are incorrect!";
     } else {
+      // Store
+      const session = new Session();
+      session.createSession(name, secondName);
       p.textContent = `Hello ${user.name}!`;
       p.classList.add("correct-message");
       // Redirect to the dashboard page

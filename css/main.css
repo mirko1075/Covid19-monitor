@@ -114,6 +114,11 @@ td {
   padding: 5px;
   text-align: left;
 }
+
+.sessionicon {
+  width: 20px;
+  height: auto;
+}
 /* END GENERAL STYLES */
 
 /* NAV BAR */
@@ -151,7 +156,7 @@ nav .navbar-brand {
 /* HOMEPAGE */
 #main-container {
   width: 100vw;
-  height: auto;
+  height: 80vh;
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -196,7 +201,7 @@ nav .navbar-brand {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
   padding: 20px;
 }
@@ -206,6 +211,7 @@ nav .navbar-brand {
   width: 100%;
   max-width: 400px;
   padding: 20px;
+  margin: 20px;
 }
 .countrydetail {
   border: 1px solid black;
