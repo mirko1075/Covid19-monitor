@@ -374,6 +374,7 @@ button:disabled,
   flex-direction: column;
   align-items: center;
 }
+
 .maincontainer {
   height: 87vh;
   padding: 20px;
