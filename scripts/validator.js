@@ -22,9 +22,8 @@ class Validator {
 
   //MANDATORY FIELDS
   validateName = (name) => {
-    // delete this.errors.lastError; // Deleted to clean prev errors from others checks
-
     if (name === "") {
+      delete this.errors.lastError; // Deleted to clean prev errors from others checks
       this.errors.lastError = this.invalidName;
       this.errors.invalidName = this.invalidName;
       return false;
@@ -33,9 +32,8 @@ class Validator {
   };
 
   validateSecondName = (secondName) => {
-    // delete this.errors.lastError; // Deleted to clean prev errors from others checks
-
     if (secondName === "") {
+      delete this.errors.lastError; // Deleted to clean prev errors from others checks
       this.errors.lastError = this.invalidSecondName;
       this.errors.invalidSecondName = this.invalidSecondName;
       return false;
@@ -53,7 +51,6 @@ class Validator {
   };
 
   validateValidEmail = (email) => {
-    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     // console.log("email", email);
     if (email === "") {
       this.errors.lastError = this.blankEmailError;
@@ -61,6 +58,7 @@ class Validator {
       // console.log("Empty email");
       return false;
     } else if (!this.checkEmailSyntax(email)) {
+      delete this.errors.lastError; // Deleted to clean prev errors from others checks
       this.errors.lastError = this.invalidEmailError;
       this.errors.invalidEmailError = this.invalidEmailError;
       // console.log("Wrong email");
@@ -70,7 +68,6 @@ class Validator {
   };
 
   validateUniqueEmail = (email) => {
-    // delete this.errors.lastError; // Deleted to clean prev errors from others checks
     const users = db.getAllUsers(); //
 
     let emailUnique = true;
@@ -83,6 +80,7 @@ class Validator {
     });
 
     if (!emailUnique) {
+      delete this.errors.lastError; // Deleted to clean prev errors from others checks
       this.errors.lastError = this.emailExistsError;
       this.errors.emailExistsError = this.emailExistsError;
       return false;
@@ -100,8 +98,8 @@ class Validator {
   };
 
   validatePassword = (password) => {
-    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     if (!this.checkPasswordRegEx(password)) {
+      delete this.errors.lastError; // Deleted to clean prev errors from others checks
       this.errors.lastError = this.passwordError;
       this.errors.passwordError = this.passwordError;
       return false;
@@ -110,8 +108,8 @@ class Validator {
   };
 
   validateRepeatPassword = (password, repeatPassword) => {
-    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     if (password != repeatPassword) {
+      delete this.errors.lastError; // Deleted to clean prev errors from others checks
       this.errors.lastError = this.repeatPasswordError;
       this.errors.repeatPasswordError = this.repeatPasswordError;
       return false;
