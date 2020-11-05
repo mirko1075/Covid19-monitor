@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <title>Covid19-monitor</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Covid19-monitor</title>
     <link rel="stylesheet" href="./css/cssreset.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -33,45 +37,80 @@
     </nav>
     <main>
       <div class="maincontainer">
-          <span id="title"><h2>Sign Up</h2></span>
-        <div class="form-wrapper">      
-
-          <div id="form-container">
-            <form class="signup-form" action="">
-              <div class="lines"><input type="text" autocomplete="name" id="name" placeholder="Name *" /></div>
-              <div class="lines"><input type="text" autocomplete="family-name" id="secondname" placeholder="Second name *" /> </div>
-              <div class="lines"><input type="text" autocomplete="country-name" id="country" placeholder="Country" /></div>
-              <div class="lines"><input type="text" autocomplete="email" id="email" placeholder="Email *" /></div>
-              <div class="lines"><input type="password" autocomplete="current-password" id="password" placeholder="Enter Password *" /></div>
-              <div class="lines"><input
-                type="password" autocomplete="new-password"
-                id="repeat-password"
-                placeholder="Repeat Password"
-              /></div>
-              <div class="buttondiv">
-                <button type="submit" class="button" id="signup-button">
-                Sign Up
-              </button>
-            </div>
-            </form>
+        <span id="title"><h2>Sign Up</h2></span>
+        <form class="signup-form" action="">
+          <div class="lines">
+            <input
+              type="text"
+              autocomplete="name"
+              id="name"
+              placeholder="Name *"
+            />
           </div>
-          <div class="message-container">
+          <div class="lines">
+            <input
+              type="text"
+              autocomplete="family-name"
+              id="secondname"
+              placeholder="Second name *"
+            />
           </div>
-        </div>
-      </main>
-      <footer>
-        <div class="footer-wrap">
-          © 2020 Copyright:
-          <a href="https://mirkosiddi.com/" target="_blank" class="footerlink"> mirkosiddi.com</a>
-          - Data is sourced from
-          <a
-            href="https://github.com/CSSEGISandData/COVID-19"
-            target="_blank"
-            class="footerlink"
-            >Johns Hopkins CSSE</a
-          >
-        </div>
-      </footer>
+          <div class="lines">
+            <input
+              type="text"
+              autocomplete="country-name"
+              id="country"
+              placeholder="Country"
+            />
+          </div>
+          <div class="lines">
+            <input
+              type="text"
+              autocomplete="email"
+              id="email"
+              placeholder="Email *"
+            />
+          </div>
+          <div class="lines">
+            <input
+              type="password"
+              autocomplete="current-password"
+              id="password"
+              placeholder="Enter Password *"
+            />
+          </div>
+          <div class="lines">
+            <input
+              type="password"
+              autocomplete="new-password"
+              id="repeat-password"
+              placeholder="Repeat Password"
+            />
+          </div>
+          <div class="buttondiv">
+            <button type="submit" class="button" id="signup-button">
+              Sign Up
+            </button>
+          </div>
+        </form>
+        <div class="message-container"></div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-wrap">
+        © 2020 Copyright:
+        <a href="https://mirkosiddi.com/" target="_blank" class="footerlink">
+          mirkosiddi.com</a
+        >
+        - Data is sourced from
+        <a
+          href="https://github.com/CSSEGISandData/COVID-19"
+          target="_blank"
+          class="footerlink"
+          >Johns Hopkins CSSE</a
+        >
+      </div>
+    </footer>
   </body>
   <script src="scripts/main.js"></script>
   <script src="./scripts/validator.js"></script>
@@ -79,4 +118,3 @@
   <script src="./scripts/signup.js"></script>
   <script src="./scripts/user.js"></script>
 </html>
-
