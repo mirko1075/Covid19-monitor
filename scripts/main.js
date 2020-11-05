@@ -21,7 +21,7 @@ class Session {
       sessionStr += `<img src="../images/computer-icons-user-profile-head-ico.png" class="sessionicon">   -   ${name}`;
 
       sessionDiv.innerHTML = sessionStr;
-      console.log(this.sessionDivContainer);
+      // console.log(this.sessionDivContainer);
       this.sessionDivContainer.appendChild(sessionDiv);
     }
   }

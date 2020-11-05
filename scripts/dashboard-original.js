@@ -4,23 +4,23 @@ const topInfeccionsDiv = document.querySelector("#topinfeccions");
 const topDeathsDiv = document.querySelector("#topdeaths");
 const topRecoveredDiv = document.querySelector("#toprecovered");
 const countryDetailDiv = document.getElementById("detail-container");
-// fetch("https://api.covid19api.com/summary", {
-//   method: "GET",
-//   headers: {
-//     "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-//     "x-rapidapi-key": "b71195a1a7msh5af8c981dcee164p1bf0bfjsnfb1c16ff1269",
-//   },
-// })
-fetch("https://rapidapi.p.rapidapi.com/all", {
+fetch("https://api.covid19api.com/summary", {
   method: "GET",
   headers: {
-    "x-rapidapi-key": "1bf6ccaf8emsha0a832033af9ea6p13172bjsn5177d51836c4",
-    "x-rapidapi-host": "covidapi6.p.rapidapi.com",
+    "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+    "x-rapidapi-key": "b71195a1a7msh5af8c981dcee164p1bf0bfjsnfb1c16ff1269",
   },
 })
+  // fetch("https://rapidapi.p.rapidapi.com/all", {
+  //   method: "GET",
+  //   headers: {
+  //     "x-rapidapi-key": "1bf6ccaf8emsha0a832033af9ea6p13172bjsn5177d51836c4",
+  //     "x-rapidapi-host": "covidapi6.p.rapidapi.com",
+  //   },
+  // })
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
     let topinfeccionsText = "";
     let topDeathsText = "";
     let topRecoveredText = "";
