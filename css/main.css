@@ -449,15 +449,13 @@ button:disabled,
   .content-central {
     display: none;
   }
+  .main-container {
+    max-height: 400px;
+  }
+
   .content-left,
   .content-right {
-    color: var(--text-color);
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 20px;
-    /* max-height: 220px; */
     max-height: 400px;
-    margin: 10px;
   }
 
   .logo-container {
