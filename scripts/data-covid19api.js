@@ -567,7 +567,8 @@ class PrintData {
     if (num == 0 || num === "0") {
       return "N/A";
     } else {
-      return num;
+      return 0;
+      // return num;
     }
   };
 }
