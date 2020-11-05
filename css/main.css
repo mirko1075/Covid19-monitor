@@ -79,7 +79,7 @@ span {
 /* GENERAL STYLES */
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", "Verdana", sans-serif;
   font-weight: 400;
   line-height: normal;
 }
@@ -136,6 +136,7 @@ nav .navbar-brand {
 }
 
 .logo-container {
+  vertical-align: middle;
   height: 85px;
   margin-top: 12px;
 }
@@ -159,16 +160,17 @@ nav .navbar-brand {
 /* HOMEPAGE */
 #main-container {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   position: relative;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
   padding: 20px;
 }
-.content-central {
+.content-animation {
+  font-family: "Roboto", "Verdana", sans-serif;
   color: var(--text-color);
   padding: 20px;
   display: flex;
@@ -449,16 +451,10 @@ button:disabled,
   .content-central {
     display: none;
   }
-  .main-container {
-    height: 100vh;
-    max-height: 400px;
+  #main-container {
+    height: 75vh;
+    justify-content: center;
   }
-
-  .content-left,
-  .content-right {
-    max-height: 400px;
-  }
-
   .logo-container {
     display: flex;
     flex-wrap: wrap;

@@ -26,5 +26,5 @@ class Session {
     }
   }
 }
-const session = new Session();
-const userSession = session.getSession();
+// const session = new Session();
+// const userSession = session.getSession();
