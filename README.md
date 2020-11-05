@@ -101,6 +101,7 @@ The **MVP** will include:
 ## API
 
 --- Check out the interesting [COVID19API](https://api.covid19api.com/) API I used. :notes:
+
 --- Backup API [RAPIDAPI](https://rapidapi.p.rapidapi.com/all/). :notes:
 ​
 
