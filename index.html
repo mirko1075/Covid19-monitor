@@ -9,25 +9,30 @@
   </head>
   <body>
     <nav>
-      <div class="logo-container">
-        <a href="index.html"
-          ><img
-            src="images/coronavirus-logo.jpg"
-            alt="Logo"
-            class="navbar-brand"
-        /></a>
+      <div id="left-nav">
+        <div class="logo-container">
+          <a href="index.html"
+            ><img
+              src="images/coronavirus-logo.jpg"
+              alt="Logo"
+              class="navbar-brand"
+          /></a>
+        </div>
+        <div id="sessiondiv-container"></div>
       </div>
-      <div>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="signup.html">Sign Up</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
+      <div id="right-nav">
+        <div>
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
       </div>
-      <div id="sessiondiv-container"></div>
     </nav>
+
     <main>
       <div class="content-animation">
         <span class="tracking-in-contract-bck">CORONAVIRUS MONITOR</span>
@@ -45,17 +50,18 @@
         <a href="https://mirkosiddi.com/" target="_blank" class="footerlink">
           mirkosiddi.com</a
         >
-        - API provided by
+        - Data is sourced from
         <a
-          href="https://rapidapi.com/user/bolorundurov"
+          href="https://github.com/CSSEGISandData/COVID-19"
           target="_blank"
           class="footerlink"
-          >bolorundurov</a
+          >Johns Hopkins CSSE</a
         >
       </div>
     </footer>
   </body>
   <script src="scripts/main.js"></script>
-  <script src="./scripts/data-rapidapi.js"></script>
+  <!-- <script src="./scripts/data-rapidapi.js"></script> -->
+  <script src="./scripts/data-covid19api.js"></script>
   <script src="./scripts/index.js"></script>
 </html>
