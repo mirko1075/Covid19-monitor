@@ -58,6 +58,8 @@ The **MVP** will include:
 
   - **css/**
 
+    --bootstrap.css
+
     --cssreset.css
 
     --main.css
@@ -67,6 +69,8 @@ The **MVP** will include:
     --database.js
 
     --user.js
+
+    --main.js
 
     --validator.js
 
@@ -78,6 +82,10 @@ The **MVP** will include:
 
     --dashboard.js
 
+    --data-rapidapid.js (Backup API)
+
+    --data-covid19api.js
+
 - **img/**
 
   --coronavirus-logo.jpeg
@@ -86,12 +94,15 @@ The **MVP** will include:
 
   --coronavirus.jpg
 
-  ​
+  ​--computer-icons-user-profile-head-ico.png
+
+  --coronavirus-crop.jpg
 
 ## API
 
-- Check out the interesting [COVID19API](https://api.covid19api.com/) API I used. :notes:
-  ​
+--- Check out the interesting [COVID19API](https://api.covid19api.com/) API I used. :notes:
+--- Backup API [RAPIDAPI](https://rapidapi.p.rapidapi.com/all/). :notes:
+​
 
 ## Links
 
@@ -104,8 +115,9 @@ The **MVP** will include:
 #### GitHub
 
 ​
-[Project GitHub](https://github.com/mirko1075/covid19-app)
+[Project GitHub](https://github.com/mirko1075/Covid19-monitor)
 ​
+[GITHUB-PAGES]https://mirko1075.github.io/Covid19-monitor/
 
 #### Slides
 
