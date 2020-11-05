@@ -159,7 +159,6 @@ nav .navbar-brand {
 /* HOMEPAGE */
 #main-container {
   width: 100vw;
-  height: 80vh;
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -450,6 +449,7 @@ button:disabled,
     display: none;
   }
   .main-container {
+    height: 100vh;
     max-height: 400px;
   }
 
@@ -495,5 +495,10 @@ button:disabled,
   .main-container {
     background: url("../images/coronavirus-crop.jpg") no-repeat center center /
       50%;
+  }
+
+  .main-container {
+    height: 80vh;
+    max-height: 300px;
   }
 }
