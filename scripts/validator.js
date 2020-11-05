@@ -1,8 +1,8 @@
 class Validator {
   constructor() {
     // predetermined error messages
-    this.invalidName = "Name cannot be blank";
-    this.invalidSecondName = "Second name cannot be blank";
+    this.invalidName = "Name is mandatory";
+    this.invalidSecondName = "Second name is mandatory";
     this.invalidEmailError = "Enter a valid email address";
     this.blankEmailError = "Email address is mandatory";
     this.emailExistsError = "The entered email address is already taken.";
@@ -53,7 +53,7 @@ class Validator {
   };
 
   validateValidEmail = (email) => {
-    // delete this.errors.lastError; // Deleted to clean prev errors from others checks
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     // console.log("email", email);
     if (email === "") {
       this.errors.lastError = this.blankEmailError;
@@ -100,7 +100,7 @@ class Validator {
   };
 
   validatePassword = (password) => {
-    // delete this.errors.lastError; // Deleted to clean prev errors from others checks
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     if (!this.checkPasswordRegEx(password)) {
       this.errors.lastError = this.passwordError;
       this.errors.passwordError = this.passwordError;
@@ -110,7 +110,7 @@ class Validator {
   };
 
   validateRepeatPassword = (password, repeatPassword) => {
-    // delete this.errors.lastError; // Deleted to clean prev errors from others checks
+    delete this.errors.lastError; // Deleted to clean prev errors from others checks
     if (password != repeatPassword) {
       this.errors.lastError = this.repeatPasswordError;
       this.errors.repeatPasswordError = this.repeatPasswordError;

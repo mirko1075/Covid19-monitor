@@ -6,7 +6,6 @@ class Fetcher {
     return (
       fetch("https://api.covid19api.com/summary", {
         method: "GET",
-        mode: "cors",
         headers: {
           "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
           "x-rapidapi-key":
