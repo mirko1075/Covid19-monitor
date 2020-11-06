@@ -400,9 +400,10 @@ button:disabled,
   flex-direction: column;
   align-content: flex-start;
   justify-content: flex-start;
-  width: 100%;
+  width: 500px;
   max-width: 600px;
   padding: 30px;
+  text-align: center;
 }
 
 .message-container p {
@@ -443,6 +444,7 @@ button:disabled,
 
 /* Up to 768px  */
 @media (max-width: 768px) {
+
   body {
     font-family: "Roboto", "Verdana", sans-serif;
     font-weight: 300;
@@ -452,6 +454,19 @@ button:disabled,
     display:flex
     width: 100vw;
     height: auto;
+  }
+
+  .message-container {
+    widows: 100%;
+  }
+  .message-container p {
+    background-color: var(--green-color);
+    font-size: 0.8rem;
+    padding: 5px;
+    margin: 5px 0;
+    color: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #feb1b1;
   }
   a {
     text-decoration: none;
