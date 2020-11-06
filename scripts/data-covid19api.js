@@ -3,7 +3,8 @@
 class Fetcher {
   // Fetching data from API and returning data converted with JSON
 
-  // API developed by https://github.com/CSSEGISandData/COVID-19
+  // API developed by Johns Hopkins CSSE
+  //https://github.com/CSSEGISandData/COVID-19
   getFetchData = () => {
     return (
       fetch("https://api.covid19api.com/summary", {
