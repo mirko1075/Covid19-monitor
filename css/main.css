@@ -123,6 +123,7 @@ td {
   width: 20px;
   height: auto;
 }
+
 /* END GENERAL STYLES */
 
 /* NAV BAR */
@@ -448,6 +449,7 @@ button:disabled,
     line-height: normal;
   }
   main {
+    display:flex
     width: 100vw;
     height: auto;
   }
