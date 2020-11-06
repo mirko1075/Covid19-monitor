@@ -2,6 +2,8 @@
 
 class Fetcher {
   // Fetching data from API and returning data converted with JSON
+
+  // API developed by https://github.com/CSSEGISandData/COVID-19
   getFetchData = () => {
     return (
       fetch("https://api.covid19api.com/summary", {
@@ -177,7 +179,7 @@ class PrintData {
     topinfeccionsText += `<table>`;
     topinfeccionsText += `  <thead>
                                   <tr>
-                                      <th colspan="3"><h3>Top 10 new confirmed cases</h3></th>
+                                      <th colspan="3"><h3>Top 10 new cases</h3></th>
                                   </tr>
   
                                   `;
@@ -269,7 +271,7 @@ class PrintData {
     this.topActiveDiv.innerHTML = "";
     const articleTopActive = document.createElement("article");
     topActiveText += `<table>`;
-    topActiveText += `<tr><th colspan="3"><h3>Top 10 total Confirmed cases</h3><br>`;
+    topActiveText += `<tr><th colspan="3"><h3>Top 10 total cases</h3><br>`;
     topActiveText += `
           <h6>Last update :  ${fetchDate} - ${fetchHour}</h6>
           </th></tr>
@@ -317,7 +319,7 @@ class PrintData {
     this.topDeathsDiv.innerHTML = "";
     const articleTopDeaths = document.createElement("article");
     topDeathsText += `<table>`;
-    topDeathsText += `<tr><th colspan="3"><h3>Top 10 deaths cases</h3><br>`;
+    topDeathsText += `<tr><th colspan="3"><h3>Top 10 new deaths cases</h3><br>`;
     topDeathsText += `
           <h6>Last update :  ${fetchDate} - ${fetchHour}</h6>
           </th></tr>
@@ -377,7 +379,7 @@ class PrintData {
     this.topRecoveredDiv.innerHTML = "";
     const articleTopRecovered = document.createElement("table");
     topRecoveredText += `<table>`;
-    topRecoveredText += `<tr><th colspan="3"><h3>Top 10 recovered cases</h3><br>`;
+    topRecoveredText += `<tr><th colspan="3"><h3>Top 10 new recovered cases</h3><br>`;
     topRecoveredText += `
         <h6>Last update :  ${fetchDate} - ${fetchHour}</h6>
         </th></tr>
@@ -565,10 +567,10 @@ class PrintData {
 
   formatZeroResult = (num) => {
     if (num == 0 || num === "0") {
-      return "N/A";
-    } else {
       return 0;
-      // return num;
+      // return "N/A";
+    } else {
+      return num;
     }
   };
 }
