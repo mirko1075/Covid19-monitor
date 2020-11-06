@@ -547,7 +547,7 @@ button:disabled,
     padding: 20px;
     border: 1px solid black;
     border-radius: 20px;
-    /* max-height: 220px; */
+    max-height: 500px;
     height: 100%;
     margin: 10px;
   }
